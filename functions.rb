@@ -1,6 +1,11 @@
 # Return a reversed copy of the array
 def reverse(an_array)
-    an_array.reverse!
+  reverse_array=[]
+  an_array.reverse_each {
+    |an_array|   reverse_array.push "#{an_array}"
+
+  }
+return reverse_array
 end
 
 # Return a map of letters and counts of letters
@@ -24,7 +29,7 @@ def sum_only_numbers(an_array)
   an_array.each do |item|
      if item.is_a? Integer
 	sum+=item
-     end 
+     end
   end
   return sum
 end
@@ -39,7 +44,7 @@ end
 def fizzbuzz
   i =0
   arr=[]
-    while i<=100  do 
+    while i<=100  do
           if i%3 ==0 && i%5==0
 	     arr.push "FizzBuzz"
 
@@ -59,7 +64,7 @@ end
 
 # Uncomment a line to test the function you are developing
 # Type "ruby functions.rb" at command line (Konsole) to run the script
-# puts reverse([3,6,'dog']).inspect
+#puts reverse([3,6,'dog']).inspect
 #puts histogram('The Quick brown fox').inspect
-# puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
+puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14, 6.5]
 #puts fizzbuzz.join("\n")

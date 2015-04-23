@@ -1,13 +1,18 @@
 class Bookmark
-all_reader: last_visited
-	def initialized (url, title)
+attr_reader: last_visited
+	def initialize (url, title)
 	@url=url
 	@title=title
 	@last_visited=0
-	end 
+	end
 
-	def visit()
+	def visit!
 	last_visited=Time.now
 	puts last_visited
 	end
 end
+user = Bookmark.new("a.com","titile")
+puts user.url
+puts user.title
+
+
